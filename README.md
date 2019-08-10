@@ -1,11 +1,17 @@
-# Project setup
+## Build Setup
 
-### Install gulp:
-1. npm install --global gulp-cli
+``` bash
 
-### In the project's folder:
-2. npm install
-3. gulp
+# Start json-server  
+npm install --global gulp-cli
+
+# install dependencies
+npm install
+
+# Run serve with hot reload at localhost:3000
+gulp
+
+```
 
 ## Build
 https://vtlxn.github.io/webcake/dist/
