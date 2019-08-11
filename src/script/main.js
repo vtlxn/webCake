@@ -15,3 +15,17 @@ let mySwiper = new Swiper('.swiper-container', {
         prevEl: '.swiper-button-prev',
     },
 });
+
+(function () {
+  const hamburger = document.getElementById("menu-btn");
+  const nav = document.querySelector(".navigation__items");
+  let doToggle = () => {
+      nav.classList.toggle('collapse');
+      hamburger.classList.toggle('is-active');
+  }
+
+  hamburger.addEventListener('click', function (e) {
+      doToggle();
+  });
+
+}());

@@ -18,3 +18,17 @@ var mySwiper = new Swiper('.swiper-container', {
     prevEl: '.swiper-button-prev'
   }
 });
+
+(function () {
+  var hamburger = document.getElementById("menu-btn");
+  var nav = document.querySelector(".navigation__items");
+
+  var doToggle = function doToggle() {
+    nav.classList.toggle('collapse');
+    hamburger.classList.toggle('is-active');
+  };
+
+  hamburger.addEventListener('click', function (e) {
+    doToggle();
+  });
+})();
