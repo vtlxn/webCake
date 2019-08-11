@@ -9,6 +9,10 @@ btn.onclick = function () {
 
 
 var mySwiper = new Swiper('.swiper-container', {
+  autoplay: {
+    delay: 5000
+  },
+  speed: 1000,
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev'
