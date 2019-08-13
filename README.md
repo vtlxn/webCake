@@ -20,4 +20,4 @@ gulp
 ```
 
 ## Build
-https://vtlxn.github.io/webcake/dist/s
+https://vtlxn.github.io/webCake/dist/index.html
