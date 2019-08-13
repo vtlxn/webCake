@@ -364,6 +364,8 @@ a {
 		padding-bottom: 30px;
 		text-align: center;
 		filter: drop-shadow(0 0 6px rgb(219, 200, 255));
+		user-select: none;
+
 	}
 
 	.row {
@@ -373,38 +375,151 @@ a {
 
 		.box {
 			display: grid;
-			border: 2px solid rgba(255, 255, 255, .3);
+			border: 2px solid rgba(255, 255, 255, 0.3);
 			border-radius: 10px;
 			width: 210px;
 			height: 242px;
+			filter: drop-shadow(0 0 3px rgb(255, 255, 255));
 			color: #686577;
 			background: rgba(255, 255, 255, 0.2);
-			filter: drop-shadow(0 0 3px rgb(255, 255, 255));
 			grid-template-columns: repeat(4, 1fr);
 			align-content: center;
 			justify-items: center;
 			margin: 5px;
+			user-select: none;
+			transition: all .3s ease-out;
+
+			&--green {
+				box-shadow: 0 0 10px rgba(0, 255, 191, 0.747);
+				transition: all .3s ease-out;
+			}
+
+			&--red {
+				box-shadow: 0 0 20px rgba(255, 0, 0, 0.747);
+				transition: all .3s ease-out;
+			}
+
+			&:hover {
+				border: 2px solid rgb(255, 255, 255);
+				transition: all .3s ease-out;
+			}
+
 
 			&__cell {
+				font-size: 15px;
 				display: flex;
 				justify-content: center;
 				align-items: center;
-				width: 30px;
-				height: 30px;
+				width: 35px;
+				height: 35px;
 				border: 2px solid #fff;
 				border-radius: 5px;
 				margin: 6px;
 				background-color: rgba(255, 255, 255, 0.3);
 				font-weight: 600;
 				justify-items: center;
+				cursor: pointer;
+				user-select: none;
+				transition: all .2s ease-in;
+				outline: none;
+
+				&[disabled] {
+					opacity: .6;
+					cursor: default;
+					transition: all .3s;
+				}
+
+				&:hover {
+					background-color: rgb(255, 255, 255);
+					transition: all .2s ease-in;
+				}
 
 				&--selected {
-					background-color: #b5ffe6;
+					display: flex;
+					background-color: #9283d6;
+					background-image: url(../img/tick-sign.svg);
+					background-size: 22px;
+					background-repeat: no-repeat;
+					background-position: center;
+					font-size: 0;
+					transition: all .1s ease-in;
+
+					&:hover {
+						background-color: #9283d6;
+						transition: all .2s ease-in;
+					}
+				}
+			}
+		}
+	}
+
+	.box-item {
+		display: grid;
+		justify-items: center;
+		margin-bottom: 20px;
+
+
+		.form {
+			display: flex;
+			flex-direction: column;
+
+			.alert {
+				text-align: center;
+				text-transform: uppercase;
+				font-weight: 600;
+				margin: 0 10px;
+				margin-bottom: 5px;
+				margin-top: 2px;
+				padding-top: 5px;
+				padding-bottom: 5px;
+				border: 2px solid rgba(255, 255, 255, 0.3);
+				border-radius: 10px;
+				background: rgba(150, 0, 0, 0.2);
+				color: #ffffff;
+				width: 210px;
+			}
+
+			.button {
+				align-self: center;
+				background-color: #9283d6;
+				color: #fff;
+				height: 50px;
+				border-radius: 10px;
+				border: 2px solid rgba(255, 255, 255, 0.3);
+				outline: none;
+				text-transform: uppercase;
+				font-weight: bold;
+				cursor: pointer;
+				transition: all .3s;
+				width: 214px;
+				transition: all .3s ease-out;
+
+				&:hover {
+					filter: brightness(1.1);
+					transition: all .3s;
+				}
+
+				&--green {
+					box-shadow: 0 0 10px rgb(255, 255, 255);
+					background-color: #2e979a;
+					transition: all .3s ease-out;
+				}
+
+				&--white {
+					box-shadow: 0 0 10px rgb(255, 255, 255);
+					transition: all .3s ease-out;
+				}
+
+				&[disabled] {
+					opacity: .6;
+					cursor: default;
+					transition: all .3s;
 				}
 			}
 		}
 	}
 }
+
 
 .footer {
 	background: linear-gradient(180deg, rgba(29, 32, 37, 1) 0%, rgba(48, 53, 61, 1) 100%);

@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 var btn = document.querySelector('.lang__btn');
 var menu = document.querySelector('.lang__items');
@@ -28,7 +28,7 @@ var mySwiper = new Swiper('.swiper-container', {
     hamburger.classList.toggle('is-active');
   };
 
-  hamburger.addEventListener('click', function (e) {
-    doToggle();
-  });
+  hamburger.onclick = function () {
+    return doToggle();
+  };
 })();
